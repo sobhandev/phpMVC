@@ -1,0 +1,10 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+table{
+    width: 100vw;
+}
+table, th, td {
+    border:1px solid black;
+  }
