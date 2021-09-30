@@ -1,10 +1,10 @@
-<?php 
+<?php
 
-class indexModel extends database{
-    public function getAll(string $table , bool $objective = false)
+class indexModel extends database
+{
+    public function getAll(string $table, bool $objective = false)
     {
-        $statement = $this->db->prepare("SELECT * FROM $table");
-        $statement->execute();
-        return $objective ? $statement->fetchAll(PDO::FETCH_OBJ) : $statement->fetchAll(PDO::FETCH_ASSOC);
-        }
+        $statement = $this->doQuery(query: "SELECT * FROM $table");
+        return $this->parseQuery(statement: $statement);
+    }
 }
